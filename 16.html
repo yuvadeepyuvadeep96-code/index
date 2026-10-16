@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Grade Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg, #dcefe1, #b8d8c0);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                padding: 20px;
+                box-sizing: border-box;
+                gap: 6px;
+            }
+
+            body::before {
+                content: "Grade Calculator";
+                margin-bottom: 18px;
+                padding: 14px 30px;
+                color: white;
+                background-color: #2f5d3a;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+                font-size: 30px;
+                font-weight: bold;
+                letter-spacing: 0.5px;
+                text-align: center;
+            }
+
+            input {
+                margin: 5px;
+                padding: 10px;
+                width: 200px;
+                box-sizing: border-box;
+                border: 1px solid #bbb;
+                border-radius: 5px;
+                font-size: 14px;
+                background-color: white;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            input:hover {
+                border-color: #76a982;
+            }
+
+            input:focus {
+                outline: 2px solid #4CAF50;
+                border-color: #4CAF50;
+                box-shadow: 0 0 6px rgba(76, 175, 80, 0.35);
+            }
+
+            label {
+                width: 200px;
+                color: #333;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            button {
+                padding: 10px 20px;
+                margin-top: 12px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 15px;
+                font-weight: bold;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+                transition: background-color 0.2s ease, transform 0.2s ease;
+            }
+
+            button:hover {
+                background-color: #45a049;
+                transform: translateY(-2px);
+            }
+
+            button:active {
+                transform: translateY(0);
+            }
+
+            @media (max-width: 480px) {
+                body::before {
+                    font-size: 24px;
+                }
+            }
+            </style>
+    </head>
+    <body>
+        <label>Mark 1</label>
+        <input type="number" id="marks">
+        <label>Mark 2</label>
+        <input type="number" id="marks">
+        <label>Mark 3</label>
+        <input type="number" id="marks">
+        <label>Mark 4</label>
+        <input type="number" id="marks">
+        <label>Mark 5</label>
+        <input type="number" id="marks">
+        <button onclick="calculateGrade()">Calculate Grade</button>
+
+        <script>
+            function calculateGrade() {
+                m1=Number(document.getElementById("marks").value);
+                m2=Number(document.getElementById("marks").value);
+                m3=Number(document.getElementById("marks").value);
+                m4=Number(document.getElementById("marks").value);
+                m5=Number(document.getElementById("marks").value);
+                sum = m1 + m2 + m3 + m4 + m5;
+                average = sum / 5;
+
+                let grade;
+                if (average >= 90) {
+                    grade = 'A';
+                } else if (average >= 80) {
+                    grade = 'B';
+                } else if (average >= 70) {
+                    grade = 'C';
+                } else if (average >= 60) {
+                    grade = 'D';
+                } else {
+                    grade = 'F';
+                }
+
+                alert('Your average mark is: ' + average + '\nYour grade is: ' + grade);
+            }
+            </script>
+     </body>
+</html>
+
+
